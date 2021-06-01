@@ -4,7 +4,7 @@ Studying shell scripting by attempting to write simple yet practical shell scrip
 
 ### Straight from the head idea (or just bad google search)
 
-Use openssl
+Use `openssl`
 
 ```bash
 $ openssl rand -base64 10
@@ -13,8 +13,8 @@ $ openssl rand -base64 10
 
 Problems:
 
-* openssl needs to be installed on a system
-* is pseudo-random according to man page:
+* `openssl` needs to be installed on a system
+* is pseudo-random according to `man` page:
     >>>
         NAME
         openssl-rand, rand - generate pseudo-random bytes
@@ -26,7 +26,7 @@ Problems:
         This command generates num random bytes using a cryptographically secure pseudo random number generator (CSPRNG).
     >>>
 
-* number of bytes should be divided by 3 or else encoded string will be padded with `= ` sign:
+* number of bytes should be divisible by 3 or else encoded string will be padded with `=` sign:
     ```bash
     $ openssl rand -base64 10
     oQe0bVNo8FUoNg==
@@ -36,4 +36,3 @@ Problems:
     9jA9wgPkcYfWwb4j
     ```
 
-Those were my thougths on first real commit.
