@@ -12,7 +12,7 @@ echo "+================================================+"
 echo "Enter password length: "
 read PASSWORD_LENGTH
 
-ALL_LETTERS_CHARSET=[:alpha:]
+ONLY_LETTERS_CHARSET=[:alpha:]
 ALPHA_NUMERIC_CHARSET=[:alnum:]
 ALNUM_PLUS_OWASP_CHARSET="A-Za-z0-9\!\"\#\$\&\'\(\)\*\+\,\-\.\/\:\\\;\<\=\>\?\@\[\]\^\_\`\{\|\}\~"
 
