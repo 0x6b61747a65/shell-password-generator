@@ -13,18 +13,7 @@ $ openssl rand -base64 10
 
 Problems:
 
-* `openssl` needs to be installed on a system
-* is pseudo-random according to `man` page:
-    >>>
-        NAME
-        openssl-rand, rand - generate pseudo-random bytes
-
-        SYNOPSIS
-        openssl rand [-help] [-out file] [-rand file...]  [-writerand file] [-base64] [-hex] num
-
-        DESCRIPTION
-        This command generates num random bytes using a cryptographically secure pseudo random number generator (CSPRNG).
-    >>>
+* depends on `openssl`
 
 * number of bytes should be divisible by 3 or else encoded string will be padded with `=` sign:
     ```bash
@@ -36,3 +25,16 @@ Problems:
     9jA9wgPkcYfWwb4j
     ```
 
+Closed that idea after `34e7f74` commit
+
+### More thought out aproach (or just good google search)
+
+Use `/dev/urandom` with `tr`
+
+Obvious pros:
+
+* `/dev/urandom` is on every system
+
+* `tr` is in GNU Core Utilities, so is also almost everywhere
+
+* complexity of a password can be tweaked by including of excluding characters of `/dev/urandom` output with `tr` flags
