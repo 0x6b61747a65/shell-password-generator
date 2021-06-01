@@ -12,4 +12,8 @@ echo "========================================="
 echo "Enter password length: "
 read PASSWORD_LENGTH
 
-echo $(head /dev/urandom | tr -dc A-Za-z0-9 | head -c$PASSWORD_LENGTH )
+ALL_LETTERS_CHARSET=[:alpha:]
+#ALPHA_NUMERIC_CHARSET=[:alnum:]
+#ALNUM_PLUS_OWASP_CHARSET="A-Za-z0-9\!\"\#\$\&\'\(\)\*\+\,\-\.\/\:\\\;\<\=\>\?\@\[\]\^\_\`\{\|\}\~"
+
+echo $(head /dev/urandom | tr -dc $ALL_LETTERS_CHARSET | head -c$PASSWORD_LENGTH )

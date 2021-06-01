@@ -25,7 +25,7 @@ Problems:
     9jA9wgPkcYfWwb4j
     ```
 
-Closed that idea after `34e7f74` commit
+Closed that idea after `34e7f74` commit. Fully removed original script after `e822d2d` commit.
 
 ### More thought out aproach (or just good google search)
 
@@ -38,3 +38,13 @@ Obvious pros:
 * `tr` is in GNU Core Utilities, so is also almost everywhere
 
 * complexity of a password can be tweaked by including of excluding characters of `/dev/urandom` output with `tr` flags
+
+### Continue to expand on a password character set
+
+ To make passwords more secure descided to add [OWASP Password Special Characters](https://owasp.org/www-community/password-special-characters)
+
+ After some time managed to escape all needed charactes is string
+
+ ```
+ALNUM_PLUS_OWASP_CHARSET="A-Za-z0-9\!\"\#\$\&\'\(\)\*\+\,\-\.\/\:\\\;\<\=\>\?\@\[\]\^\_\`\{\|\}\~"
+ ```
